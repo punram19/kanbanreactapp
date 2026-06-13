@@ -5,12 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Get Code
-        uses: actions/checkout@v2
-      - name: use node
-        uses: actions/setup-node@v2
-        with :
-          node-version: '14'
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
       - name: Install dependencies
         run: npm ci
         working-directory: frontend
